@@ -15,6 +15,8 @@ class PokemonService
             for(const pokemon of data)
             {
                 // debugger
+                let pkm = new Pokemon(pokemon)
+                // pkm.addToDom()
             }
         })
         .catch()
