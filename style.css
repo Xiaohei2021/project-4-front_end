@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .banner {
+    background: url(https://wallpapercave.com/wp/ELWYXSY.jpg) no-repeat center; 
+    background-size: fit;
+    height: 500px;
+    position: relative;
+  }
+  
+  .banner-text {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:gold;
+  }
+

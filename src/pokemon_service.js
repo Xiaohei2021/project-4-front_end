@@ -9,7 +9,14 @@ class PokemonService
     {
         fetch(this.source + `/pokemons`)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => 
+        {
+            // console.log(data)
+            for(const pokemon of data)
+            {
+                // debugger
+            }
+        })
         .catch()
     }
 }
