@@ -21,3 +21,13 @@ body {
     color:gold;
   }
 
+  #pokemons-cont
+  {
+    background-image: url(https://wallpaperaccess.com/full/45634.png);
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    /* height: 600px;*/
+    border: 2px solid;
+    /* color: blue; */ 
+  }
