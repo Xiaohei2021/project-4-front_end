@@ -16,7 +16,7 @@ class PokemonService
             {
                 // debugger
                 let pkm = new Pokemon(pokemon)
-                // pkm.addToDom()
+                pkm.addToDom()
             }
         })
         .catch()
