@@ -4,10 +4,12 @@ body {
   }
   
   .banner {
-    background: url(https://wallpapercave.com/wp/ELWYXSY.jpg) no-repeat center; 
-    background-size: fit;
+    background-image: url(https://wallpapercave.com/wp/ELWYXSY.jpg); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 500px;
-    position: relative;
+
   }
   
   .banner-text {
