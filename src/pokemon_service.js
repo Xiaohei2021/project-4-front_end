@@ -1,7 +1,15 @@
 class PokemonService
 {
-    constructor(port)
+    constructor(source)
     {
-        this.port = port;
+        this.source = source;
+    }
+
+    getPokemons()
+    {
+        fetch(this.source + `/pokemons`)
+        .then(r => r.json())
+        .then(data => console.log(data))
+        .catch()
     }
 }
