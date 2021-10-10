@@ -19,5 +19,15 @@
         // debugger
     }
 
+    render()
+    {
+        this.element.innerHTML = 
+        `
+        <div data-id="${this.id}">
+        
+        </div>
+        `
+    }
+
 
  }
