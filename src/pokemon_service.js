@@ -21,4 +21,23 @@ class PokemonService
         })
         .catch()
     }
+
+    createPokemons()
+    {
+        const pokemonInfo = 
+        {
+            pokemon:
+            {
+                name:, 
+                pokemon_type:, 
+                moves:, 
+                abilities:, 
+                national_pokedex_num:, 
+            }
+        }
+        // debugger
+        fetch(this.source + `/pokemons`)
+        .then(r=> r.json())
+        .then(data => console.log(data))
+    }
 }
