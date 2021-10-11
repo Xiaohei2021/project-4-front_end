@@ -16,6 +16,7 @@
         this.element = document.createElement('li')
         this.element.dataset['id'] = id;
         this.element.id = `pokemon-${id}`;
+        this.element.addEventListener("click", this.handleClick)
         Pokemon.all.push(this)
         // debugger
     }
@@ -32,10 +33,40 @@
         <h5>${this.national_pokedex_num}</h5>
         <h5>${this.team_id}</h5>
         <h5>${this.team}</h5>
+        <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
+        <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
+
         </div>
         `
         return this.element
 
+    }
+
+    handleClick = (e) =>
+    {
+        if (e.target.innerText === "Swap Pokemon/Moves")
+        {
+            console.log(e.target)
+            // debugger
+            this.createEditForm()
+        }
+        else if (e.target.innerText === "Retire Pokemon")
+        {
+            console.log(e.target)
+
+        }
+
+        else if (e.target.innerText === "Save")
+        {
+            
+        }
+        
+        // e.preventDefault();
+    }
+
+    createEditForm()
+    {
+        debugger
     }
 
     addToDom()
