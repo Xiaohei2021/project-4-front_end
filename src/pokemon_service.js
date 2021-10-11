@@ -39,16 +39,16 @@ class PokemonService
         } 
         // debugger
 
-        // const configObject = 
-        // {
-        //     method: "POST",
-        //     headers: 
-        //     {
-        //         "Content-Type": "application/json",
-        //         Accept: "application/json"
-        //     },
-        //     body: JSON.stringify(pokemonInfo)
-        // }
+        const configObject = 
+        {
+            method: "POST",
+            headers: 
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(pokemonInfo)
+        }
         // debugger
 
         
