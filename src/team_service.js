@@ -7,21 +7,22 @@ class TeamService
 
     getTeams()
     {
-        fetch(`${this.source}/teams`)
+        fetch(this.source + `/teams` /*`${this.source}/teams`*/)
         .then(r => r.json())
         // .then(data => {debugger})
         .then(data => 
         {
             // console.log(data)
-            for(const team of data)
+            // for(const team of data)
+            // {
+            data.forEach(team => 
             {
                 // debugger
                 const roster = new Team(team)
                 // debugger
-                roster.teamSelection();
-
+                roster.addToTeamSelection()
                 
-            }
+            })
         })
         .catch()
     }

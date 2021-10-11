@@ -36,19 +36,23 @@ class PokemonService
                 national_pokedex_num: monDexNum.value,
                 team_id: teamSelect.value 
             }
-        }
-
-        const configObject = 
-        {
-            method: "POST",
-            headers: 
-            {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(pokemonInfo)
-        }
+        } 
         // debugger
+
+        // const configObject = 
+        // {
+        //     method: "POST",
+        //     headers: 
+        //     {
+        //         "Content-Type": "application/json",
+        //         Accept: "application/json"
+        //     },
+        //     body: JSON.stringify(pokemonInfo)
+        // }
+        // debugger
+
+        
+
         fetch(this.source + `/pokemons`, configObject)
         .then(r=> r.json())
         // .then(data => console.log(data))

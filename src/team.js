@@ -10,12 +10,12 @@ class Team
         this.pokemons = pokemons;
     }
 
-    teamSelection()
+    addToTeamSelection()
     {
-        const selection = document.createElement("option");
-        selection.value = this.id;
-        selection.innertext = this.name;
-        teamSelect.appendChild(selection);
+        const teamChoice = document.createElement("option");
+        teamChoice.value = this.id;
+        teamChoice.innerText = this.name;
+        teamSelect.append(teamChoice);
     }
 
 }
