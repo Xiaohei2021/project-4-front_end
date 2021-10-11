@@ -37,9 +37,25 @@ class PokemonService
                 team_id: teamSelect.value 
             }
         }
+
+        const configObject = 
+        {
+            method: "POST",
+            headers: 
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(pokemonInfo)
+        }
         // debugger
-        fetch(this.source + `/pokemons`)
+        fetch(this.source + `/pokemons`, configObject)
         .then(r=> r.json())
-        .then(data => console.log(data))
+        // .then(data => console.log(data))
+        .then(data => 
+        {
+            const mon = new Pokemon(data)
+            mon.addToDom()
+        })
     }
 }

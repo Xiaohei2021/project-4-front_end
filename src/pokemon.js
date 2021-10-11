@@ -3,7 +3,7 @@
      static all = [];
      static cont = document.getElementById("pokemons-cont")
 
-    constructor({id, name, pokemon_type, moves, abilities, national_pokedex_num, team_id, team})
+    constructor({id, name, pokemon_type, moves, abilities, national_pokedex_num,team_id, team})
     {
         this.id = id
         this.name = name
