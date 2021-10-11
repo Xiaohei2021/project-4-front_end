@@ -26,13 +26,15 @@ class PokemonService
     {
         const pokemonInfo = 
         {
+            // debugger
             pokemon:
             {
-                name:, 
-                pokemon_type:, 
-                moves:, 
-                abilities:, 
-                national_pokedex_num:, 
+                name: monName.value, 
+                pokemon_type: monType.value, 
+                moves: monMoves.value, 
+                abilities: monAbility.value, 
+                national_pokedex_num: monDexNum.value,
+                team_id: teamSelect.value 
             }
         }
         // debugger
