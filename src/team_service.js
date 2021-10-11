@@ -15,7 +15,8 @@ class TeamService
             for(const team of data)
             {
                 let roster = new Team(team)
-                debugger
+                roster.teamSelection();
+                // debugger
 
                 // roster.addToDom()
             }
