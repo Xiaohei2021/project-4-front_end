@@ -61,9 +61,56 @@ class PokemonService
         })
     }
 
-    updateTeamRoster()
+    updateTeamRoster(pokemon)
+    {
+        const {name, pokemon_type, moves, abilities, national_pokedex_num, id} = pokemon;
+        const pokemonData = 
+        {
+            name, 
+            pokemon_type, 
+            moves, 
+            abilities, 
+            national_pokedex_num
+        }
+        const configObject = 
+        {
+            method: "PATCH",
+            headers: 
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(pokemonData)
+        }
+
+        // debugger
+        fetch(this.source + `/pokemons/${id}`, configObject)
+        // .then(r=> r.json())
+        // .then(data => 
+        // {
+        //     // const mon = new Pokemon(data)
+        //     pokemon.render()
+        // })
+        //-----------------------------
+        //or
+        // .then(r=> {pokemon.render()})
+        //-----------------------------
+        //or
+        // .then(()=> {pokemon.render()})
+         //-----------------------------
+        //or
+        .then(pokemon.render())
+
+
+    }
+
+    retireTeamMember(e)
     {
         // debugger
-        
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(this.source + `/pokemons/${id}`, {method: "DELETE"})
+        .then(r=> r.json())
+        .then(data => alert(data.message))
     }
 }

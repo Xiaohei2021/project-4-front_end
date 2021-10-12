@@ -41,42 +41,6 @@
 
     }
 
-    changedMonInfo()
-    {
-        this.name = this.element.querySelector(".edit-name").value;
-        this.pokemon_type = this.element.querySelector(".edit-poke_type").value;
-        this.moves = this.element.querySelector(".edit-moves").value;
-        this.abilities = this.element.querySelector(".edit-abilities").value;
-        this.national_pokedex_num = this.element.querySelector(".edit-national_pokedex_num").value;
-        this.team_id = this.element.querySelector(".edit-team_id").value;
-        this.team = this.element.querySelector(".edit-team").value;
-        // debugger
-        pokemonCall.updateTeamRoster()
-
-    }
-    handleClick = (e) =>
-    {
-        if (e.target.innerText === "Swap Pokemon/Moves")
-        {
-            console.log(e.target)
-            // debugger
-            e.target.innerText = "Save Changes"
-            this.createEditForm()
-        }
-        else if (e.target.innerText === "Retire Pokemon")
-        {
-            console.log(e.target)
-
-        }
-
-        else if (e.target.innerText === "Save Changes")
-        {
-            console.log("working")
-            e.target.innerText = "Swap Pokemon/Moves"
-            this.changedMonInfo()
-        }        
-    }
-
     createEditForm()
     {
         const monInfo = this.element.querySelector("div");
@@ -90,6 +54,49 @@
         }
         // debugger
     }
+
+
+
+    changedMonInfo()
+    {
+        this.name = this.element.querySelector(".edit-name").value;
+        this.pokemon_type = this.element.querySelector(".edit-poke_type").value;
+        this.moves = this.element.querySelector(".edit-moves").value;
+        this.abilities = this.element.querySelector(".edit-abilities").value;
+        this.national_pokedex_num = this.element.querySelector(".edit-national_pokedex_num").value;
+        // this.team_id = this.element.querySelector(".edit-team_id").value;
+        // this.team = this.element.querySelector(".edit-team").value;
+        // debugger
+        pokemonCall.updateTeamRoster(this)
+
+    }
+
+    handleClick = (e) =>
+    {
+        if (e.target.innerText === "Swap Pokemon/Moves")
+        {
+            console.log(e.target)
+            // debugger
+            e.target.innerText = "Save Changes"
+            this.createEditForm()
+        }
+
+        else if (e.target.innerText === "Save Changes")
+        {
+            console.log("working")
+            e.target.innerText = "Swap Pokemon/Moves"
+            this.changedMonInfo()
+        }  
+
+        else if (e.target.innerText === "Retire Pokemon")
+        {
+            console.log(e.target)
+            pokemonCall.retireTeamMember(e)
+
+        } 
+    }
+
+    
 
     addToDom()
     {
