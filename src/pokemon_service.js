@@ -51,8 +51,6 @@ class PokemonService
         }
         // debugger
 
-        
-
         fetch(this.source + `/pokemons`, configObject)
         .then(r=> r.json())
         // .then(data => console.log(data))

@@ -1,4 +1,4 @@
-let buildTeam = true;
+let buildTeam = false;
 
 const source = `http://localhost:3000`;
 const pokemonCall = new PokemonService(source);
@@ -27,9 +27,7 @@ function handleSubmit(e)
     pokemonCall.createPokemons();
 }
 
-buildbtn.addEventListener("click", handleBuild);
-
-function handleBuild(e)
+buildbtn.addEventListener("click", () =>
 {
     buildTeam =! buildTeam;
     if (buildTeam)
@@ -40,4 +38,4 @@ function handleBuild(e)
     {
         formbBlock.style.display = "none";
     }
-}
+})
