@@ -15,12 +15,21 @@ body {
   .banner-text {
     text-align: center;
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
     color:gold;
   }
 
+
+  .banner-text2 {
+    text-align: center;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:gold;
+  }
   #pokemons-cont
   {
     background-image: url(https://wallpaperaccess.com/full/45634.png);
@@ -31,3 +40,5 @@ body {
     border: 2px solid;
     /* color: blue; */ 
   }
+
+
