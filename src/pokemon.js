@@ -27,7 +27,7 @@
         `
         <div class="card">
             <h5>data-id:"${this.id}"</h5>
-            <h5>Pokemon Name: ${this.name}</h5>
+            <h5>${this.name}</h5>
             <h5>${this.pokemon_type}</h5>
             <h5>${this.moves}</h5>
             <h5>${this.abilities}</h5>
