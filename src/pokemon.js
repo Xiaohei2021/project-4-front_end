@@ -13,7 +13,7 @@
         this.national_pokedex_num = national_pokedex_num 
         this.team_id = team_id
         this.team = team
-        this.element = document.createElement('li')
+        this.element = document.createElement('div')
         this.element.dataset['id'] = id;
         this.element.id = `pokemon-${id}`;
         this.element.addEventListener("click", this.handleClick)
@@ -25,17 +25,17 @@
     {
         this.element.innerHTML = 
         `
-        <div data-id="${this.id}">
-        <h5>Pokemon Name: ${this.name}</h5>
-        <h5>${this.pokemon_type}</h5>
-        <h5>${this.moves}</h5>
-        <h5>${this.abilities}</h5>
-        <h5>${this.national_pokedex_num}</h5>
-        <h5>${this.team_id}</h5>
-        <h5>${this.team}</h5>
-        <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
-        <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
-
+        <div class="card">
+            <h5>data-id:"${this.id}"</h5>
+            <h5>Pokemon Name: ${this.name}</h5>
+            <h5>${this.pokemon_type}</h5>
+            <h5>${this.moves}</h5>
+            <h5>${this.abilities}</h5>
+            <h5>${this.national_pokedex_num}</h5>
+            <h5>${this.team_id}</h5>
+            <h5>${this.team}</h5>
+            <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
+            <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         </div>
         `
         return this.element

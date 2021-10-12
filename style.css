@@ -30,15 +30,28 @@ body {
     transform: translate(-50%, -50%);
     color:gold;
   }
-  #pokemons-cont
+  #registration-block
   {
     background-image: url(https://wallpaperaccess.com/full/45634.png);
-    background-size: contain;
-    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
-    /* height: 600px;*/
+    height: 500px;
     border: 2px solid;
     /* color: blue; */ 
+    text-align: center;
+    color: aquamarine;
   }
 
+  .card 
+  {
+    text-align: center;
+    border: blue solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px grey;
+  }
 
