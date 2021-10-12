@@ -25,29 +25,34 @@
     {
         this.element.innerHTML = 
         `
-        <div class="card">
-            <h5>data-id:"${this.id}"</h5>
-            <h5>${this.name}</h5>
-            <h5>${this.pokemon_type}</h5>
-            <h5>${this.moves}</h5>
-            <h5>${this.abilities}</h5>
-            <h5>${this.national_pokedex_num}</h5>
-            <h5>${this.team_id}</h5>
-            <h5>${this.team}</h5>
-            <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
-            <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
+        <div data-id="${this.id}">
+            <h5 class="name">${this.name}</h5>
+            <h5 class="poke_type">${this.pokemon_type}</h5>
+            <h5 class="moves">${this.moves}</h5>
+            <h5 class="abilities">${this.abilities}</h5>
+            <h5 class="national_pokedex_num">${this.national_pokedex_num}</h5>
+            <h5 class="team_id">${this.team_id}</h5>
+            <h5 class="team">${this.team}</h5>
         </div>
+        <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
+        <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         `
         return this.element
 
     }
 
+    changedMonInfo()
+    {
+        // debugger
+
+    }
     handleClick = (e) =>
     {
         if (e.target.innerText === "Swap Pokemon/Moves")
         {
             console.log(e.target)
             // debugger
+            e.target.innerText = "Save Changes"
             this.createEditForm()
         }
         else if (e.target.innerText === "Retire Pokemon")
@@ -56,17 +61,26 @@
 
         }
 
-        else if (e.target.innerText === "Save")
+        else if (e.target.innerText === "Save Changes")
         {
-            
-        }
-        
-        // e.preventDefault();
+            console.log("working")
+            e.target.innerText = "Swap Pokemon/Moves"
+            this.changedMonInfo()
+        }        
     }
 
     createEditForm()
     {
-        debugger
+        const monInfo = this.element.querySelector("div");
+        for (const element of monInfo.children)
+        {
+            let changingInfo = element.innerText;
+            let name = element.classList[0];
+            debugger
+
+            element.outerHTML = `<input type="text" class="edit-${name}" value="${changingInfo}"/>`
+        }
+        // debugger
     }
 
     addToDom()
