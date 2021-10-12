@@ -43,7 +43,15 @@
 
     changedMonInfo()
     {
+        this.name = this.element.querySelector(".edit-name").value;
+        this.pokemon_type = this.element.querySelector(".edit-poke_type").value;
+        this.moves = this.element.querySelector(".edit-moves").value;
+        this.abilities = this.element.querySelector(".edit-abilities").value;
+        this.national_pokedex_num = this.element.querySelector(".edit-national_pokedex_num").value;
+        this.team_id = this.element.querySelector(".edit-team_id").value;
+        this.team = this.element.querySelector(".edit-team").value;
         // debugger
+        pokemonCall.updateTeamRoster()
 
     }
     handleClick = (e) =>
@@ -76,7 +84,7 @@
         {
             let changingInfo = element.innerText;
             let name = element.classList[0];
-            debugger
+            // debugger
 
             element.outerHTML = `<input type="text" class="edit-${name}" value="${changingInfo}"/>`
         }

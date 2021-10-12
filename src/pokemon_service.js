@@ -60,4 +60,10 @@ class PokemonService
             mon.addToDom()
         })
     }
+
+    updateTeamRoster()
+    {
+        // debugger
+        
+    }
 }
