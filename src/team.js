@@ -1,7 +1,8 @@
 class Team
 {
     static all = [];
-    static team_box = document.getElementById("team-cont")
+    static team_box = document.getElementById("teams-cont")
+
     constructor({name, leader, description, id, pokemons})
     {
         // debugger

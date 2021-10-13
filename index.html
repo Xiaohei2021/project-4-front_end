@@ -26,10 +26,12 @@
         </div>
     </div>
 
+    
    
     <div id="registration-block" style="display: none;"> 
-        <!-- <div id="team-form">
+        <!--  <div id="team-form"> -->
             <form id="team-builder">
+                <h3>Enlist Your Desired Pokemon:</h3>
                 <label for="team-name">Team Name:</label>
                 <input type="text" name="name" id="team-name"><br><br>
                 <label for="team-leader">Team Leader:</label>
@@ -38,7 +40,7 @@
                 <input type="text" name="description" id="team-description"><br><br>
                 <input type="submit" value="Register">
             </form>
-        </div> -->
+        <!-- </div> --> 
 
         <!-- <div id="pokemon-form"> -->
             <form id="pokemon-builder">
@@ -69,15 +71,24 @@
         <!-- </div> -->
     </div>
 
-    <div id="team-cont">
-        <h2>Here are all the Teams</h2>   
+    <h2>
+        Click the button below to see all the Teams. <br>
+        <button id="show-teams">See All Team</button>
+    </h2>   
 
+    <div id="teams-cont" style="display: none;">
+       
+        
         <ul id="team-list">
         </ul> 
     </div>
 
-    <div id="pokemons-cont">
-        <h2>Here are all the Pokemoms</h2>   
+    <h2>
+        Click the button below to see all the Pokemoms.<br>  
+        <button id="show-pokemons">See All Pokemons</button>
+    </h2>  
+
+    <div id="pokemons-cont" style="display: none;">
 
         <ul id="pokemon-list">
         </ul> 
