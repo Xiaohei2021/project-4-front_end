@@ -63,7 +63,7 @@ class PokemonService
 
     updateTeamRoster(pokemon)
     {
-        const {name, pokemon_type, moves, abilities, national_pokedex_num, id} = pokemon;
+        const {name, pokemon_type, moves, abilities, national_pokedex_num} = pokemon;
         const pokemonData = 
         {
             name, 
@@ -100,8 +100,6 @@ class PokemonService
          //-----------------------------
         //or
         .then(pokemon.render())
-
-
     }
 
     retireTeamMember(e)

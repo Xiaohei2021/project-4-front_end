@@ -27,12 +27,13 @@
         `
         <div data-id="${this.id}">
             <h5 class="name">${this.name}</h5>
-            <h5 class="poke_type">${this.pokemon_type}</h5>
+            <h5 class="pokemon_type">${this.pokemon_type}</h5>
             <h5 class="moves">${this.moves}</h5>
             <h5 class="abilities">${this.abilities}</h5>
             <h5 class="national_pokedex_num">${this.national_pokedex_num}</h5>
             <h5 class="team_id">${this.team_id}</h5>
             <h5 class="team">${this.team}</h5>
+            <br>
         </div>
         <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
         <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
@@ -43,13 +44,23 @@
     createEditForm()
     {
         const monInfo = this.element.querySelector("div");
+        // debugger
         for (const element of monInfo.children)
         {
             let changingInfo = element.innerText;
             let name = element.classList[0];
+            // let pokemon_type = element.classList[1];
+            // let moves = element.classList[2];
+            // let abilities = element.classList[3];
+            // let national_pokedex_num = element.classList[4];
+
             // debugger
 
             element.outerHTML = `<input type="text" class="edit-${name}" value="${changingInfo}"/>`
+            // element.outerHTML = `<input type="text" class="edit-${pokemon_type}" value="${changingInfo}"/>`
+            // element.outerHTML = `<input type="text" class="edit-${moves}" value="${changingInfo}"/>`
+            // element.outerHTML = `<input type="text" class="edit-${abilities}" value="${changingInfo}"/>`
+            // element.outerHTML = `<input type="text" class="edit-${national_pokedex_num}" value="${changingInfo}"/>`
         }
         // debugger
     }
@@ -57,7 +68,7 @@
     changedMonInfo()
     {
         this.name = this.element.querySelector(".edit-name").value;
-        this.pokemon_type = this.element.querySelector(".edit-poke_type").value;
+        this.pokemon_type = this.element.querySelector(".edit-pokemon_type").value;
         this.moves = this.element.querySelector(".edit-moves").value;
         this.abilities = this.element.querySelector(".edit-abilities").value;
         this.national_pokedex_num = this.element.querySelector(".edit-national_pokedex_num").value;

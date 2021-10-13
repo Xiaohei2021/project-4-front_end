@@ -45,10 +45,10 @@ class Team
         return this.element;
     }
 
-    enableEditForm()
+    showEditForm()
     {
         const teamInfo = this.element.querySelector("div");
-        debugger
+        // debugger
         for (const element of teamInfo.children)
         {
             let changingInfo = element.innerText;
@@ -59,6 +59,41 @@ class Team
         }
         // debugger
     }
+
+    changedTeamInfo()
+    {
+        this.name = this.element.querySelector(".edit-name").value;
+        this.leader = this.element.querySelector(".edit-team_leader").value;
+        this.description = this.element.querySelector(".edit-description").value;
+        // debugger
+        teamCall.updateTeam(this)
+    }
+
+
+    handleClick = (e) =>
+    {
+        if (e.target.innerText === "Edit Team info")
+        {
+            console.log(e.target)
+            // debugger
+            e.target.innerText = "Save Changes"
+            this.showEditForm()
+        }
+
+        else if (e.target.innerText === "Save Changes")
+        {
+            console.log("working")
+            e.target.innerText = "Edit Team info"
+            this.changedTeamInfo()
+        }  
+
+        else if (e.target.innerText === "Disband Team")
+        {
+            console.log(e.target)
+            teamCall.disbandTeam(e)
+        } 
+    }
+
 
     showInDom()
     {

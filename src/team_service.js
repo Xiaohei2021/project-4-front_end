@@ -62,5 +62,51 @@ class TeamService
             team.addToDom()
         })
     }
+
+
+    updateTeam()
+    {
+        const {name, leader, description} = team;
+        const teamData = 
+        {
+            name, 
+            leader,
+            description
+        }
+        const configObject = 
+        {
+            method: "PATCH",
+            headers: 
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(teamData)
+        }
+
+        // debugger
+        fetch(this.source + `/teams/${id}`, configObject)
+        // .then(r=> r.json())
+        // .then(data => 
+        // {
+        //     // const mon = new Pokemon(data)
+        //     pokemon.render()
+        // })
+        //-----------------------------
+        //or
+        // .then(r=> {pokemon.render()})
+        //-----------------------------
+        //or
+        // .then(()=> {pokemon.render()})
+         //-----------------------------
+        //or
+        .then(pokemon.render())
+    }
     
+    disbandTeam()
+    {
+
+    }
+
+
 }
