@@ -13,6 +13,7 @@ class Team
         this.pokemons = pokemons;
         
         this.element = document.createElement('div')
+        this.element.addEventListener("click", this.handleClick)
         Team.all.push(this)
         // debugger
     }
@@ -36,6 +37,20 @@ class Team
             <h5 class="pokemons">${this.pokemons}</h5>
         `
         return this.element;
+    }
+
+    enableEditForm()
+    {
+        const monInfo = this.element.querySelector("div");
+        for (const element of monInfo.children)
+        {
+            let changingInfo = element.innerText;
+            let name = element.classList[0];
+            // debugger
+
+            element.outerHTML = `<input type="text" class="edit-${name}" value="${changingInfo}"/>`
+        }
+        // debugger
     }
 
     showInDom()

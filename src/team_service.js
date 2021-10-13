@@ -28,6 +28,39 @@ class TeamService
         .catch()
     }
 
+    createTeams()
+    {
+        const teamInfo = 
+        {
+            team:
+            {
+                name: teamName.value,
+                leader: teamLeader.value,
+                description: teamDescription.value  
+            }
+        }
+    
+ 
+    const configObject = 
+        {
+            method: "POST",
+            headers: 
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(teamInfo)
+        }
+        // debugger
 
+        fetch(this.source + `/teams`, configObject)
+        .then(r=> r.json())
+        // .then(data => console.log(data))
+        .then(data => 
+        {
+            const team = new Team(data)
+            team.addToDom()
+        })
+    }
     
 }

@@ -23,6 +23,11 @@ const monMoves = document.getElementById("pokemon-moves");
 const monAbility = document.getElementById("pokemon-abilities");
 const monDexNum = document.getElementById("pokemon-national_pokedex_num");
 
+
+const teamName = document.getElementById("team-name")
+const teamLeader = document.getElementById("team-leader")
+const teamDescription = document.getElementById("team-description")
+
 pokemonCall.getPokemons();
 teamCall.getTeams();
 
