@@ -1,5 +1,7 @@
 class Team
 {
+    static all = [];
+    static team_box = document.getElementById("team-cont")
     constructor({name, leader, description, id, pokemons})
     {
         // debugger
@@ -8,6 +10,8 @@ class Team
         this.description = description;
         this.id = id;
         this.pokemons = pokemons;
+        this.element = document.createElement('div')
+        Team.all.push(this)
     }
 
     addToTeamSelection()
@@ -16,6 +20,23 @@ class Team
         teamChoice.value = this.id;
         teamChoice.innerText = this.name;
         teamSelect.append(teamChoice);
+    }
+
+    render()
+    {
+        this.element.innerHTML = 
+        `
+            <h5 class="name">${this.name}</h5>
+            <h5 class="team_leader">${this.leader}</h5>
+            <h5 class="description">${this.description}</h5>
+            <h5 class="id">${this.id}</h5>
+            <h5 class="pokemons">${this.pokemons}</h5>
+        `
+    }
+
+    showInDom()
+    {
+        Team.team_box.append(this.render())
     }
 
 }

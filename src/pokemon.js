@@ -38,7 +38,6 @@
         <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         `
         return this.element
-
     }
 
     createEditForm()
@@ -55,8 +54,6 @@
         // debugger
     }
 
-
-
     changedMonInfo()
     {
         this.name = this.element.querySelector(".edit-name").value;
@@ -68,7 +65,6 @@
         // this.team = this.element.querySelector(".edit-team").value;
         // debugger
         pokemonCall.updateTeamRoster(this)
-
     }
 
     handleClick = (e) =>
@@ -92,11 +88,8 @@
         {
             console.log(e.target)
             pokemonCall.retireTeamMember(e)
-
         } 
     }
-
-    
 
     addToDom()
     {
