@@ -63,7 +63,8 @@ class PokemonService
 
     updateTeamRoster(pokemon)
     {
-        const {name, pokemon_type, moves, abilities, national_pokedex_num} = pokemon;
+        const {name, pokemon_type, moves, abilities, national_pokedex_num, id} = pokemon;
+        // debugger
         const pokemonData = 
         {
             name, 

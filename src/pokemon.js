@@ -1,7 +1,7 @@
  class Pokemon
  {
      static all = [];
-     static cont = document.getElementById("pokemons-cont")
+     static pokemon_box = document.getElementById("pokemons-cont")
 
     constructor({id, name, pokemon_type, moves, abilities, national_pokedex_num,team_id, team})
     {
@@ -13,6 +13,8 @@
         this.national_pokedex_num = national_pokedex_num 
         this.team_id = team_id
         this.team = team
+
+
         this.element = document.createElement('div')
         this.element.dataset['id'] = id;
         this.element.id = `pokemon-${id}`;
@@ -33,8 +35,8 @@
             <h5 class="national_pokedex_num">${this.national_pokedex_num}</h5>
             <h5 class="team_id">${this.team_id}</h5>
             <h5 class="team">${this.team}</h5>
-            <br>
         </div>
+
         <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
         <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         `
@@ -92,6 +94,7 @@
         {
             console.log("working")
             e.target.innerText = "Swap Pokemon/Moves"
+            // debugger
             this.changedMonInfo()
         }  
 
@@ -105,7 +108,7 @@
     addToDom()
     {
         // debugger
-        Pokemon.cont.append(this.render())
+        Pokemon.pokemon_box.append(this.render())
     }
 
 

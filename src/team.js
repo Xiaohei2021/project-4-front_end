@@ -3,13 +3,13 @@ class Team
     static all = [];
     static team_box = document.getElementById("teams-cont")
 
-    constructor({name, leader, description, id, pokemons})
+    constructor({id, name, leader, description, pokemons})
     {
         // debugger
+        this.id = id;
         this.name = name;
         this.leader = leader;
         this.description = description;
-        this.id = id;
         this.pokemons = pokemons;
         
         this.element = document.createElement('div')
@@ -30,21 +30,42 @@ class Team
 
     render()
     {
+        // debugger
         this.element.innerHTML = 
         `
         <div data-id="${this.id}">
             <h5 class="name">${this.name}</h5>
             <h5 class="team_leader">${this.leader}</h5>
             <h5 class="description">${this.description}</h5>
-            <h5 class="id">${this.id}</h5>
-            <h5 class="pokemons">${this.pokemons}</h5>
+            <h5 class="pokemons"></h5>
         </div>
         <button class = "edit" data-id=${this.id}>Edit Team info</button>
         <button class = "delete" data-id=${this.id}>Disband Team</button>
         `
+        let pokemon_array =this.element.querySelector(".pokemons")
+        this.showTeam(pokemon_array)
+        // debugger
         return this.element;
     }
 
+    showTeam(pokemon_array)
+    {
+        for (const element of this.pokemons)
+        {
+            let poke = document.createElement("div")
+            poke.innerHTML = `
+            
+                <ul>
+                    <li>${element.name}</li>
+                    <li>${element.moves}</li>
+                </ul>
+            `
+            pokemon_array.append(poke);
+        }
+
+
+        // debugger
+    }
     showEditForm()
     {
         const teamInfo = this.element.querySelector("div");
@@ -66,7 +87,7 @@ class Team
         this.leader = this.element.querySelector(".edit-team_leader").value;
         this.description = this.element.querySelector(".edit-description").value;
         // debugger
-        teamCall.updateTeam(this)
+        teamCall.updateTeamInfo(this)
     }
 
 
@@ -84,6 +105,7 @@ class Team
         {
             console.log("working")
             e.target.innerText = "Edit Team info"
+            // debugger
             this.changedTeamInfo()
         }  
 

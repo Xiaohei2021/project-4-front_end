@@ -41,7 +41,7 @@ class TeamService
         }
     
  
-    const configObject = 
+        const configObject = 
         {
             method: "POST",
             headers: 
@@ -59,14 +59,15 @@ class TeamService
         .then(data => 
         {
             const team = new Team(data)
-            team.addToDom()
+            team.showInDom()
         })
     }
 
 
-    updateTeam()
+    updateTeamInfo(team)
     {
         const {name, leader, description} = team;
+        
         const teamData = 
         {
             name, 
@@ -100,7 +101,7 @@ class TeamService
         // .then(()=> {pokemon.render()})
          //-----------------------------
         //or
-        .then(pokemon.render())
+        .then(team.render())
     }
     
     disbandTeam()

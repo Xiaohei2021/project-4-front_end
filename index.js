@@ -15,7 +15,9 @@ const teamBlock = document.getElementById("teams-cont")
 const pokemonsBlock = document.getElementById("pokemons-cont")
 
 const pokemonForm = document.getElementById("pokemon-builder");
+const teamForm = document.getElementById("team-builder")
 const teamSelect = document.getElementById("team-dropdown");
+
 
 const monName = document.getElementById("pokemon-name");
 const monType = document.getElementById("pokemon-type");
@@ -23,22 +25,29 @@ const monMoves = document.getElementById("pokemon-moves");
 const monAbility = document.getElementById("pokemon-abilities");
 const monDexNum = document.getElementById("pokemon-national_pokedex_num");
 
-
 const teamName = document.getElementById("team-name")
 const teamLeader = document.getElementById("team-leader")
 const teamDescription = document.getElementById("team-description")
 
+
 pokemonCall.getPokemons();
 teamCall.getTeams();
 
-pokemonForm.addEventListener("submit", handleSubmit);
-
-function handleSubmit(e)
+pokemonForm.addEventListener("submit", handleSubmit1);
+function handleSubmit1(e)
 {
     e.preventDefault();
     // debugger
     pokemonCall.createPokemons();
 }
+
+teamForm.addEventListener("submit", handleSubmit2);
+function handleSubmit2(e)
+{
+    e.preventDefault();
+    teamCall.createTeams();
+}
+
 
 buildBtn.addEventListener("click", () =>
 {
