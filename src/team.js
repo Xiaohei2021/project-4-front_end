@@ -13,6 +13,8 @@ class Team
         this.pokemons = pokemons;
         
         this.element = document.createElement('div')
+        this.element.dataset['id'] = id;
+        this.element.id = `team-${id}`;
         this.element.addEventListener("click", this.handleClick)
         Team.all.push(this)
         // debugger
@@ -30,19 +32,24 @@ class Team
     {
         this.element.innerHTML = 
         `
+        <div data-id="${this.id}">
             <h5 class="name">${this.name}</h5>
             <h5 class="team_leader">${this.leader}</h5>
             <h5 class="description">${this.description}</h5>
             <h5 class="id">${this.id}</h5>
             <h5 class="pokemons">${this.pokemons}</h5>
+        </div>
+        <button class = "edit" data-id=${this.id}>Edit Team info</button>
+        <button class = "delete" data-id=${this.id}>Disband Team</button>
         `
         return this.element;
     }
 
     enableEditForm()
     {
-        const monInfo = this.element.querySelector("div");
-        for (const element of monInfo.children)
+        const teamInfo = this.element.querySelector("div");
+        debugger
+        for (const element of teamInfo.children)
         {
             let changingInfo = element.innerText;
             let name = element.classList[0];
