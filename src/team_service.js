@@ -12,18 +12,22 @@ class TeamService
         // .then(data => {debugger})
         .then(data => 
         {
-            // console.log(data)
-            // for(const team of data)
-            // {
+            // debugger
             data.forEach(team => 
             {
+            // for(const team of data)
+            // {
                 // debugger
                 const roster = new Team(team)
                 // debugger
                 roster.addToTeamSelection()
+                roster.showInDom()
                 
             })
         })
         .catch()
     }
+
+
+    
 }

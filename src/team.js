@@ -10,8 +10,10 @@ class Team
         this.description = description;
         this.id = id;
         this.pokemons = pokemons;
+        
         this.element = document.createElement('div')
         Team.all.push(this)
+        // debugger
     }
 
     addToTeamSelection()
@@ -32,6 +34,7 @@ class Team
             <h5 class="id">${this.id}</h5>
             <h5 class="pokemons">${this.pokemons}</h5>
         `
+        return this.element;
     }
 
     showInDom()
