@@ -29,21 +29,31 @@
     
    
     <div id="registration-block" style="display: none;"> 
+
+        <h3>Form your new Dream Team by completing the information below:</h3>
+        <button id="team-starter">Click here</button>
+
+        <h2>Already made a team or want to add a pokemons to a team?</h2>
+        <button id="pokemon-adder">Click here</button>
+
+        <br>
+        <br>
+
         <!--  <div id="team-form"> -->
-            <form id="team-builder">
-                <h3>Form your Dream Team by completing the information below:</h3>
+            <form id="team-builder" style="display: none;">
                 <label for="team-name">Team Name:</label>
                 <input type="text" name="name" id="team-name"><br><br>
                 <label for="team-leader">Team Leader:</label>
                 <input type="text" name="leader" id="team-leader"><br><br>
                 <label for="team-description">Team Description:</label>
                 <input type="text" name="description" id="team-description"><br><br>
-                <input type="submit" value="Register">
+                <input type="submit" value="Register"><br><br><br>
             </form>
         <!-- </div> --> 
-
+               
+               
         <!-- <div id="pokemon-form"> -->
-            <form id="pokemon-builder">
+            <form id="pokemon-builder" style="display: none;">
                 <h3>Enlist Your Desired Pokemon:</h3>
                 <label for="pokemon-name">Pokemon Name:</label>
                 <input type="text" name="name" value="" placeholder="Please enter the pokemon's Name" id="pokemon-name"><br><br>
@@ -62,21 +72,29 @@
         <!-- </div> -->
     </div>
 
-    <h2>
-        Click the button below to see all the Teams. <br>
-        <button id="show-teams">See All Team</button>
-    </h2>   
 
-    <div id="teams-cont" style="display: none;">
+
+    <div>
+        <h2>
+            Click the button below to see all the Teams. <br>
+            <button id="show-teams">See All Team</button>
+        </h2>   
+
+        <div id="teams-cont" style="display: none;">
+        </div>
     </div>
 
-    <h2>
-        Click the button below to see all the Pokemoms.<br>  
-        <button id="show-pokemons">See All Pokemons</button>
-    </h2>  
 
-    <div id="pokemons-cont" style="display: none;">
+    <div>
+        <h2>
+            Click the button below to see all the Pokemoms.<br>  
+            <button id="show-pokemons">See All Pokemons</button>
+        </h2>  
+
+        <div id="pokemons-cont" style="display: none;">
+        </div>
     </div>
+
 
 </body>
 </html>

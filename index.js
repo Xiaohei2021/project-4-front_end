@@ -1,16 +1,22 @@
-let buildTeam = false;
-let showTeam = false;
-let showMons = false;
 
 const source = `http://localhost:3000`;
 const pokemonCall = new PokemonService(source);
 const teamCall = new TeamService(source);
 
+let showSelection = false;
+let buildTeam = false;
+let showTeam = false;
+let showMons = false;
+
 const buildBtn = document.getElementById("team-creator");
-const showBtn1 = document.getElementById("show-teams")
-const showBtn2 = document.getElementById("show-pokemons")
+const showBtn1 = document.getElementById("show-teams");
+const showBtn2 = document.getElementById("show-pokemons");
+
+const teamBtn = document.getElementById("team-starter")
+const addBtn = document.getElementById("pokemon-adder")
 
 const formbBlock = document.getElementById("registration-block")
+
 const teamBlock = document.getElementById("teams-cont")
 const pokemonsBlock = document.getElementById("pokemons-cont")
 
@@ -51,7 +57,7 @@ function handleSubmit2(e)
 
 buildBtn.addEventListener("click", () =>
 {
-    buildTeam =! buildTeam;
+    showSelection=! showSelection;
     if (buildTeam)
     {
         formbBlock.style.display = "block";         
@@ -61,6 +67,34 @@ buildBtn.addEventListener("click", () =>
         formbBlock.style.display = "none";
     }
 })
+
+
+teamBtn.addEventListener("click", () =>
+{
+    teamForm =! teamForm;
+    if (showTeamForm)
+    {
+        teamForm.style.display = "block";         
+    }
+    else
+    {
+        teamForm.style.display = "none";
+    }
+})
+
+addBtn.addEventListener("click", () =>
+{
+    buildTeam =! buildTeam;
+    if (buildTeam)
+    {
+        pokemonForm.style.display = "block";         
+    }
+    else
+    {
+        pokemonForm.style.display = "none";
+    }
+})
+
 
 showBtn1.addEventListener("click", () =>
 {
