@@ -105,7 +105,7 @@ class PokemonService
 
     retireTeamMember(e)
     {
-        // debugger
+        debugger
         const id = e.target.dataset.id
         e.target.parentElement.remove()
         fetch(this.source + `/pokemons/${id}`, {method: "DELETE"})

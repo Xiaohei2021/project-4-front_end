@@ -53,6 +53,8 @@ class TeamService
         }
         // debugger
 
+
+
         fetch(this.source + `/teams`, configObject)
         .then(r=> r.json())
         // .then(data => console.log(data))
@@ -66,7 +68,7 @@ class TeamService
 
     updateTeamInfo(team)
     {
-        const {name, leader, description} = team;
+        const {name, leader, description,id} = team;
         
         const teamData = 
         {
@@ -104,9 +106,14 @@ class TeamService
         .then(team.render())
     }
     
-    disbandTeam()
+    disbandTeam(e)
     {
-
+        // debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(this.source + `/teams/${id}`, {method: "DELETE"})
+        .then(r=> r.json())
+        .then(data => alert(data.message))
     }
 
 

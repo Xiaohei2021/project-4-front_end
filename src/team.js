@@ -32,6 +32,8 @@ class Team
     {
         // debugger
         this.element.innerHTML = 
+
+
         `
         <div data-id="${this.id}">
             <h5 class="name">${this.name}</h5>
@@ -42,13 +44,13 @@ class Team
         <button class = "edit" data-id=${this.id}>Edit Team info</button>
         <button class = "delete" data-id=${this.id}>Disband Team</button>
         `
-        let pokemon_array =this.element.querySelector(".pokemons")
-        this.showTeam(pokemon_array)
+        let teamRoster =this.element.querySelector(".pokemons")
+        this.showTeam(teamRoster)
         // debugger
         return this.element;
     }
 
-    showTeam(pokemon_array)
+    showTeam(teamRoster)
     {
         for (const element of this.pokemons)
         {
@@ -57,10 +59,13 @@ class Team
             
                 <ul>
                     <li>${element.name}</li>
+                    <li>${element.pokemon_type}</li>
                     <li>${element.moves}</li>
+                    <li>${element.abilities}</li>
+                    <li>${element.national_pokedex_num}</li>
                 </ul>
             `
-            pokemon_array.append(poke);
+            teamRoster.append(poke);
         }
 
 
