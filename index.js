@@ -46,6 +46,8 @@ function handleSubmit1(e)
     e.preventDefault();
     // debugger
     pokemonCall.createPokemons();
+    debugger
+    e.target.reset();
 }
 
 teamForm.addEventListener("submit", handleSubmit2);
@@ -53,6 +55,8 @@ function handleSubmit2(e)
 {
     e.preventDefault();
     teamCall.createTeams();
+    e.target.reset();
+
 }
 
 

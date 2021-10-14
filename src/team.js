@@ -32,8 +32,6 @@ class Team
     {
         // debugger
         this.element.innerHTML = 
-
-
         `
         <div data-id="${this.id}">
             <h5 class="name">Team Title: ${this.name}</h5>
