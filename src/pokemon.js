@@ -28,13 +28,13 @@
         this.element.innerHTML = 
         `
         <div data-id="${this.id}">
-            <h5 class="name">${this.name}</h5>
-            <h5 class="pokemon_type">${this.pokemon_type}</h5>
-            <h5 class="moves">${this.moves}</h5>
-            <h5 class="abilities">${this.abilities}</h5>
-            <h5 class="national_pokedex_num">${this.national_pokedex_num}</h5>
-            <h5 class="team_id">${this.team_id}</h5>
-            <h5 class="team">${this.team}</h5>
+            <h5 class="name">Pokemon Name: ${this.name}</h5>
+            <h5 class="pokemon_type">Pokemon's Type: ${this.pokemon_type}</h5>
+            <h5 class="moves">Pokemon's Moves: ${this.moves}</h5>
+            <h5 class="abilities">Pokemon's Ability: ${this.abilities}</h5>
+            <h5 class="national_pokedex_num">Pokedex National Dex Num#: ${this.national_pokedex_num}</h5>
+            <h5 class="team_id">Team Id: ${this.team_id}</h5>
+            <h5 class="team">Pokemon Team: ${this.team}</h5>
         </div>
 
         <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>

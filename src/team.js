@@ -36,9 +36,10 @@ class Team
 
         `
         <div data-id="${this.id}">
-            <h5 class="name">${this.name}</h5>
-            <h5 class="team_leader">${this.leader}</h5>
-            <h5 class="description">${this.description}</h5>
+            <h5 class="name">Team Title: ${this.name}</h5>
+            <h5 class="team_leader">Team Leader: ${this.leader}</h5>
+            <h5 class="description">Team Description: ${this.description}</h5>
+            <h3> ${this.name}'s Pokemons: </h3>
             <h5 class="pokemons"></h5>
         </div>
         <button class = "edit" data-id=${this.id}>Edit Team info</button>
@@ -56,13 +57,22 @@ class Team
         {
             let poke = document.createElement("div")
             poke.innerHTML = `
-            
-                <ul>
-                    <li>${element.name}</li>
-                    <li>${element.pokemon_type}</li>
-                    <li>${element.moves}</li>
-                    <li>${element.abilities}</li>
-                    <li>${element.national_pokedex_num}</li>
+                <ul style="font-family:'Courier New'">
+                    <li>
+                        Pokemon's Name: ${element.name}
+                    </li>
+                    <li>
+                        Pokemon's Type: ${element.pokemon_type}
+                    </li>
+                    <li>
+                        Pokemon's Moves: ${element.moves}
+                    </li>
+                    <li>
+                        Pokemon's Ability: ${element.abilities}
+                    </li>
+                    <li>
+                        Pokedex National Dex Num#: ${element.national_pokedex_num}
+                    </li>
                 </ul>
             `
             teamRoster.append(poke);
