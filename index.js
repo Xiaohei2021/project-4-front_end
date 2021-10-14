@@ -5,6 +5,7 @@ const teamCall = new TeamService(source);
 
 let showSelection = false;
 let buildTeam = false;
+let addMons = false;
 let showTeam = false;
 let showMons = false;
 
@@ -58,7 +59,7 @@ function handleSubmit2(e)
 buildBtn.addEventListener("click", () =>
 {
     showSelection=! showSelection;
-    if (buildTeam)
+    if (showSelection)
     {
         formbBlock.style.display = "block";         
     }
@@ -71,8 +72,8 @@ buildBtn.addEventListener("click", () =>
 
 teamBtn.addEventListener("click", () =>
 {
-    teamForm =! teamForm;
-    if (showTeamForm)
+    buildTeam =! buildTeam;
+    if (buildTeam)
     {
         teamForm.style.display = "block";         
     }
@@ -84,8 +85,8 @@ teamBtn.addEventListener("click", () =>
 
 addBtn.addEventListener("click", () =>
 {
-    buildTeam =! buildTeam;
-    if (buildTeam)
+    addMons =! addMons;
+    if (addMons)
     {
         pokemonForm.style.display = "block";         
     }
