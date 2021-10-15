@@ -53,28 +53,28 @@
     displayTeam(teamDetail)
     {
         // debugger
-        for (const element in this.team)
-        {
+        // for (const element in this.team)
+        // {
             debugger
             let info = document.createElement("div")
             info.innerHTML = 
             `
             <p style="font-family:'Courier New'">
                     <li>
-                        Team's Name: ${element.name}
+                        Team's Name: ${this.team.name}
                     </li>
                     <li>
-                        Team's Leader: ${element.leader}
+                        Team's Leader: ${this.team.leader}
                     </li>
                     <li>
-                        Team's Description: ${element.description}
+                        Team's Description: ${this.team.description}
                     </li>
                     
                 </p>
             `
             teamDetail.append(info);
             // debugger 
-        }
+        // }
     }
 
     createEditForm()
