@@ -20,6 +20,7 @@ class TeamService
                 // debugger
                 const roster = new Team(team)
                 // debugger
+                // roster.addPokemonToTeamRoster();
                 roster.addToTeamSelection()
                 roster.showInDom()
             })

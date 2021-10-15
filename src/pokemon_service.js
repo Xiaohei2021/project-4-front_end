@@ -17,6 +17,7 @@ class PokemonService
                 // debugger
                 let pkm = new Pokemon(pokemon)
                 // debugger
+                // pkm.
                 pkm.addToDom()
             }
         })
@@ -59,10 +60,9 @@ class PokemonService
         {
             // debugger
             const mon = new Pokemon(data)
-            mon.addToDom();
-            // mon.addPokemonToTeamRoster();
-         
-
+            mon.addToDom(); /*adding newly created pokemon to the to pokemon-box div*/
+            mon.addPokemonToTeamRoster(); /*adding newly created pokemon to be displayed in the team block div*/
+    
         })
     }
 

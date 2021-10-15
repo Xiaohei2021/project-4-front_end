@@ -5,6 +5,7 @@
 
     constructor({id, name, pokemon_type, moves, abilities, national_pokedex_num,team_id, team})
     {
+        // debugger
         this.id = id
         this.name = name
         this.pokemon_type = pokemon_type
@@ -42,21 +43,23 @@
         <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         `
         // debugger
-        let origin = this.element.querySelector(".team")
-
-        this.displayTeam(origin)
+        let teamDetail = this.element.querySelector(".team")
+        // debugger
+        this.displayTeam(teamDetail)
         // debugger
         return this.element;
     }
 
-    displayTeam(origin)
+    displayTeam(teamDetail)
     {
-        for (const element of this.pokemon)
+        // debugger
+        for (const element in this.team)
         {
+            debugger
             let info = document.createElement("div")
             info.innerHTML = 
             `
-            <ul style="font-family:'Courier New'">
+            <p style="font-family:'Courier New'">
                     <li>
                         Team's Name: ${element.name}
                     </li>
@@ -67,9 +70,9 @@
                         Team's Description: ${element.description}
                     </li>
                     
-                </ul>
+                </p>
             `
-            origin.append(info);
+            teamDetail.append(info);
             // debugger 
         }
     }
@@ -138,15 +141,54 @@
 
     addToDom()
     {
+        // debugger
         Pokemon.pokemon_box.append(this.render())
         // debugger
     }
 
-    // addPokemonToTeamRoster()
-    // {
+    addPokemonToTeamRoster()
+    {
         // debugger
-        // Team.teamMembs.append(this.render())
-    // }
+        let rosterInfo = this.element.querySelector("div") /*extracting only the pokemon's information from the whole new pokemon object*/
+        // debugger
+        for (const element of rosterInfo)
+        {
+            debugger
+            let info = document.createElement("div")
+                info.innerHTML = 
+                `
+                <ul style="font-family:'Courier New'">
+                <li>
+                    Pokemon's Name: ${element.name}
+                </li>
+                <li>
+                    Pokemon's Type: ${element.pokemon_type}
+                </li>
+                <li>
+                    Pokemon's Moves: ${element.moves}
+                </li>
+                <li>
+                    Pokemon's Ability: ${element.abilities}
+                </li>
+                <li>
+                    Pokedex National Dex Num#: ${element.national_pokedex_num}
+                </li>
+            </ul>
+                `
+            .append(info);
+        }
+        // debugger
+        // Team.teamMembs.append(rosterInfo)
+    }
 
-
+    
  }
+
+//  #team-4 > div > h5.pokemons
+
+// currently facing two issues
+
+//1.adding newly created pokemon to a tea without refreshingg 
+
+//2. addin team info to pokemon
+ 

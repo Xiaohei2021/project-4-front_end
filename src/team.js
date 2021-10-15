@@ -39,7 +39,7 @@ class Team
             <h5 class="team_leader">Team Leader: ${this.leader}</h5>
             <h5 class="description">Team Description: ${this.description}</h5>
             <h3> ${this.name}'s Pokemons: </h3>
-            <h5 class="pokemons"></h5>
+            <h5 class="pokemons" id = "team-membs"></h5>
         </div>
         <button class = "edit" data-id=${this.id}>Edit Team info</button>
         <button class = "delete" data-id=${this.id}>Disband Team</button>
@@ -49,7 +49,7 @@ class Team
         let teamRoster = this.element.querySelector(".pokemons")
 
         this.showTeam(teamRoster)
-        // debugger
+        // debugger********
         return this.element;
     }
 
@@ -57,21 +57,27 @@ class Team
     {
         for (const element of this.pokemons)
         {
+            // debugger
             let poke = document.createElement("div")
-            poke.innerHTML = `
+            poke.innerHTML = 
+            `
                 <ul style="font-family:'Courier New'">
                     <li>
                         Pokemon's Name: ${element.name}
                     </li>
+
                     <li>
                         Pokemon's Type: ${element.pokemon_type}
                     </li>
+
                     <li>
                         Pokemon's Moves: ${element.moves}
                     </li>
+
                     <li>
                         Pokemon's Ability: ${element.abilities}
                     </li>
+
                     <li>
                         Pokedex National Dex Num#: ${element.national_pokedex_num}
                     </li>
