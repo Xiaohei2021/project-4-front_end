@@ -34,13 +34,44 @@
             <h5 class="abilities">Pokemon's Ability: ${this.abilities}</h5>
             <h5 class="national_pokedex_num">Pokedex National Dex Num#: ${this.national_pokedex_num}</h5>
             <h5 class="team_id">Team Id: ${this.team_id}</h5>
-            <h5 class="team">Pokemon Team: ${this.team}</h5>
+            <h3> ${this.name}'s team information:</h3>
+            <h5 class="team"></h5>
         </div>
-
+        
         <button class = "edit" data-id=${this.id}>Swap Pokemon/Moves</button>
         <button class = "delete" data-id=${this.id}>Retire Pokemon</button>
         `
-        return this.element
+        // debugger
+        let origin = this.element.querySelector(".team")
+
+        this.displayTeam(origin)
+        // debugger
+        return this.element;
+    }
+
+    displayTeam(origin)
+    {
+        for (const element of this.pokemon)
+        {
+            let info = document.createElement("div")
+            info.innerHTML = 
+            `
+            <ul style="font-family:'Courier New'">
+                    <li>
+                        Team's Name: ${element.name}
+                    </li>
+                    <li>
+                        Team's Leader: ${element.leader}
+                    </li>
+                    <li>
+                        Team's Description: ${element.description}
+                    </li>
+                    
+                </ul>
+            `
+            origin.append(info);
+            // debugger 
+        }
     }
 
     createEditForm()
@@ -107,9 +138,15 @@
 
     addToDom()
     {
-        // debugger
         Pokemon.pokemon_box.append(this.render())
+        // debugger
     }
+
+    // addPokemonToTeamRoster()
+    // {
+        // debugger
+        // Team.teamMembs.append(this.render())
+    // }
 
 
  }

@@ -16,6 +16,7 @@ class PokemonService
             {
                 // debugger
                 let pkm = new Pokemon(pokemon)
+                // debugger
                 pkm.addToDom()
             }
         })
@@ -56,8 +57,12 @@ class PokemonService
         // .then(data => console.log(data))
         .then(data => 
         {
+            // debugger
             const mon = new Pokemon(data)
-            mon.addToDom()
+            mon.addToDom();
+            // mon.addPokemonToTeamRoster();
+         
+
         })
     }
 
@@ -105,7 +110,7 @@ class PokemonService
 
     retireTeamMember(e)
     {
-        debugger
+        // debugger
         const id = e.target.dataset.id
         e.target.parentElement.remove()
         fetch(this.source + `/pokemons/${id}`, {method: "DELETE"})

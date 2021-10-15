@@ -26,6 +26,7 @@ class Team
         teamChoice.value = this.id;
         teamChoice.innerText = this.name;
         teamSelect.append(teamChoice);
+        // debugger
     }
 
     render()
@@ -43,7 +44,10 @@ class Team
         <button class = "edit" data-id=${this.id}>Edit Team info</button>
         <button class = "delete" data-id=${this.id}>Disband Team</button>
         `
-        let teamRoster =this.element.querySelector(".pokemons")
+        // debugger
+
+        let teamRoster = this.element.querySelector(".pokemons")
+
         this.showTeam(teamRoster)
         // debugger
         return this.element;
@@ -74,11 +78,12 @@ class Team
                 </ul>
             `
             teamRoster.append(poke);
+            // debugger
         }
-
 
         // debugger
     }
+
     showEditForm()
     {
         const teamInfo = this.element.querySelector("div");

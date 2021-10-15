@@ -22,7 +22,6 @@ class TeamService
                 // debugger
                 roster.addToTeamSelection()
                 roster.showInDom()
-                
             })
         })
         .catch()
@@ -39,8 +38,7 @@ class TeamService
                 description: teamDescription.value  
             }
         }
-    
- 
+
         const configObject = 
         {
             method: "POST",
@@ -53,16 +51,16 @@ class TeamService
         }
         // debugger
 
-
-
         fetch(this.source + `/teams`, configObject)
         .then(r=> r.json())
         // .then(data => console.log(data))
         .then(data => 
         {
             const team = new Team(data)
-            team.showInDom()
+            team.showInDom();
+            team.addToTeamSelection();
         })
+
     }
 
 

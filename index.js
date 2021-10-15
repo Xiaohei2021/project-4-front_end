@@ -24,6 +24,7 @@ const pokemonsBlock = document.getElementById("pokemons-cont")
 const pokemonForm = document.getElementById("pokemon-builder");
 const teamForm = document.getElementById("team-builder")
 const teamSelect = document.getElementById("team-dropdown");
+const teamMembs = document.getElementById("pokeArray")
 
 
 const monName = document.getElementById("pokemon-name");
@@ -46,7 +47,7 @@ function handleSubmit1(e)
     e.preventDefault();
     // debugger
     pokemonCall.createPokemons();
-    debugger
+    // debugger
     e.target.reset();
 }
 
