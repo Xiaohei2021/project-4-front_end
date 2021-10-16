@@ -57,6 +57,7 @@ class TeamService
         // .then(data => console.log(data))
         .then(data => 
         {
+            Pokemon.create();
             const team = new Team(data)
             team.showInDom();
             team.addToTeamSelection();

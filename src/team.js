@@ -47,7 +47,6 @@ class Team
         // debugger
 
         let teamRoster = this.element.querySelector(".pokemons")
-
         this.showTeam(teamRoster)
         // debugger********
         return this.element;
@@ -143,6 +142,8 @@ class Team
 
     showInDom()
     {
+        // debugger
+        
         Team.team_box.append(this.render())
     }
 

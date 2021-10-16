@@ -53,28 +53,24 @@
     displayTeam(teamDetail)
     {
         // debugger
-        // for (const element in this.team)
-        // {
-            debugger
-            let info = document.createElement("div")
-            info.innerHTML = 
-            `
-            <p style="font-family:'Courier New'">
-                    <li>
-                        Team's Name: ${this.team.name}
-                    </li>
-                    <li>
-                        Team's Leader: ${this.team.leader}
-                    </li>
-                    <li>
-                        Team's Description: ${this.team.description}
-                    </li>
+        let info = document.createElement("div")
+        info.innerHTML = 
+        `
+        <p style="font-family:'Courier New'">
+            <li>
+                Team's Name: ${this.team.name}
+            </li>
+            <li>
+                Team's Leader: ${this.team.leader}
+            </li>
+            <li>
+                Team's Description: ${this.team.description}
+            </li>
                     
-                </p>
-            `
-            teamDetail.append(info);
-            // debugger 
-        // }
+        </p>
+        `
+        teamDetail.append(info);
+        // debugger 
     }
 
     createEditForm()
@@ -146,49 +142,16 @@
         // debugger
     }
 
-    addPokemonToTeamRoster()
-    {
-        // debugger
-        let rosterInfo = this.element.querySelector("div") /*extracting only the pokemon's information from the whole new pokemon object*/
-        // debugger
-        for (const element of rosterInfo)
-        {
-            debugger
-            let info = document.createElement("div")
-                info.innerHTML = 
-                `
-                <ul style="font-family:'Courier New'">
-                <li>
-                    Pokemon's Name: ${element.name}
-                </li>
-                <li>
-                    Pokemon's Type: ${element.pokemon_type}
-                </li>
-                <li>
-                    Pokemon's Moves: ${element.moves}
-                </li>
-                <li>
-                    Pokemon's Ability: ${element.abilities}
-                </li>
-                <li>
-                    Pokedex National Dex Num#: ${element.national_pokedex_num}
-                </li>
-            </ul>
-                `
-            .append(info);
-        }
-        // debugger
-        // Team.teamMembs.append(rosterInfo)
-    }
+
 
     
  }
 
 //  #team-4 > div > h5.pokemons
 
-// currently facing two issues
+// currently facing  one xtwox issues
 
 //1.adding newly created pokemon to a tea without refreshingg 
 
-//2. addin team info to pokemon
+//2. addin team info to pokemon ---> executed
  
