@@ -69,6 +69,7 @@ class PokemonService
                 team.pokemons.push({id: mon.id, name: mon.name, pokemon_type: mon.pokemon_type, moves: mon.moves, abilities: mon.abilities, national_pokede_num: mon.national_pokedex_num}) 
                 // debugger 
                 team.showInDom();
+                team.addToTeamSelection();
             }
         
             mon.addToDom(); /*adding newly created pokemon to the to pokemon-box div*/
