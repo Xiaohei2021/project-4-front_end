@@ -1,0 +1,1 @@
+This is app is designed to be a single page website where the creator can build his/her dream pokemon team. The website enable the creator to build, display, edit, and delete dream pokemon team without the need to refresh the page. 
